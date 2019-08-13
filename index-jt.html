@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+    <title>WeUI</title>
+    <link rel="stylesheet" href="./weui.css">
+    <script src="./zepto.min.js"></script>
+    <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script src="https://res.wx.qq.com/open/libs/weuijs/1.2.1/weui.min.js"></script>
+</head>
+<style>
+.weui_cell1{
+  justify-content: center;
+  flex-direction: column;
+}
+.weui_uploader_input_wrp1,.weui_uploader_file1 {
+  margin-right: 0;
+  width: 240px;
+  height: 135px;
+  float: none;
+}
+.weui_uploader_input_wrp3,.weui_uploader_input_wrp4 {
+  margin-bottom: 0;
+}
+.weui_cells1 {
+  background-color: unset;
+}
+.weui_cells1:before{
+  border: none !important;
+}
+.weui_cells1:after{
+  border: none !important;
+}
+.weui_uploader_input_wrp2 {
+  background: url(./zl.png) no-repeat center;
+  background-size: 100%;
+}
+.weui_uploader_input_wrp1 {
+  border: none;
+}
+</style>
+<body>
+<div class="container">
+  <div class="weui-gallery" id="gallery">
+      <span class="weui-gallery__img" id="galleryImg"></span>
+      <div class="weui-gallery__opr">
+          <a href="javascript:" class="weui-gallery__del">
+              <i class="weui-icon-delete weui-icon_gallery-delete"></i>
+          </a>
+      </div>
+  </div>
+  <div class="weui_cells weui_cells_form">
+    <div class="weui_cell">
+      <div class="weui_uploader_input_wrp weui_uploader_input_wrp3" onclick="akkk()"></div>
+      <ul class="weui_uploader_files weui_uploader_files2"></ul>
+    </div>
+    <div class="weui_cell">
+      <div class="weui_uploader_input_wrp weui_uploader_input_wrp4" onclick="aggg()"></div>
+      <ul class="weui_uploader_files weui_uploader_files4"></ul>
+    </div>
+  </div>
+</div>
+  <!-- 身份证弹窗 -->
+  <div class="weui_dialog_alert" id="dialog-1" style="display: none;">
+    <div class="weui_mask"></div>
+    <div class="weui_dialog">
+      <div class="weui_dialog_hd"><strong class="weui_dialog_title">请上传身份证图片</strong>
+      </div>
+      <div class="weui_dialog_bd">
+          <div class="weui_cells weui_cells1 weui_cells_form">
+              <div class="weui_cell weui_cell1">
+                <ul class="weui_uploader_files weui_uploader_files1">
+                </ul>
+                <div class="weui_uploader_input_wrp weui_uploader_input_wrp1" style="background:url('./zm.png') no-repeat center;background-size: 100% ">
+                  <input class="weui_uploader_input js_file1" type="file" accept="image/jpg,image/jpeg,image/png,image/gif" multiple="">
+                </div>
+                <div class="weui_uploader_input_wrp weui_uploader_input_wrp1" style="background:url('./fm.png') no-repeat center;background-size: 100% ">
+                  <input class="weui_uploader_input js_file2" type="file" accept="image/jpg,image/jpeg,image/png,image/gif" multiple="">
+                </div>
+              </div>
+            </div>
+      </div>
+      <div class="weui_dialog_ft">
+        <a href="javascript:;" class="weui_btn_dialog primary">确定</a>
+      </div>
+    </div>
+  </div>
+  <!-- 购房合同弹窗 -->
+  <div class="weui_dialog_alert" id="dialog-2" style="display: none;">
+      <div class="weui_mask"></div>
+      <div class="weui_dialog">
+        <div class="weui_dialog_hd"><strong class="weui_dialog_title">请上传购房合同</strong>
+        </div>
+        <div class="weui_dialog_bd" style="height: 70vh;overflow-y: scroll;">
+          <div class="weui_cells weui_cells1 weui_cells_form">
+            <div class="weui_cell weui_cell1">
+              <ul class="weui_uploader_files weui_uploader_files3">
+              </ul>
+              <div class="weui_uploader_input_wrp weui_uploader_input_wrp1 weui_uploader_input_wrp2">
+                <input class="weui_uploader_input js_file3" type="file" accept="image/jpg,image/jpeg,image/png,image/gif" multiple="">
+              </div>
+              <div class="weui_uploader_input_wrp weui_uploader_input_wrp1 weui_uploader_input_wrp2">
+                <input class="weui_uploader_input js_file4" type="file" accept="image/jpg,image/jpeg,image/png,image/gif" multiple="">
+              </div>
+              <div class="weui_uploader_input_wrp weui_uploader_input_wrp1 weui_uploader_input_wrp2">
+                <input class="weui_uploader_input js_file5" type="file" accept="image/jpg,image/jpeg,image/png,image/gif" multiple="">
+              </div>
+              <div class="weui_uploader_input_wrp weui_uploader_input_wrp1 weui_uploader_input_wrp2">
+                <input class="weui_uploader_input js_file6" type="file" accept="image/jpg,image/jpeg,image/png,image/gif" multiple="">
+              </div>
+              <div class="weui_uploader_input_wrp weui_uploader_input_wrp1 weui_uploader_input_wrp2">
+                <input class="weui_uploader_input js_file7" type="file" accept="image/jpg,image/jpeg,image/png,image/gif" multiple="">
+              </div>
+              <div class="weui_uploader_input_wrp weui_uploader_input_wrp1 weui_uploader_input_wrp2">
+                <input class="weui_uploader_input js_file8" type="file" accept="image/jpg,image/jpeg,image/png,image/gif" multiple="">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="weui_dialog_ft">
+          <a href="javascript:;" class="weui_btn_dialog primary">确定</a>
+        </div>
+      </div>
+    </div>
+</body>
+<script>
+imgsfz = [];
+imggfht = [];
+//------------------------------------------------------------------------------------//
+function akkk() {
+  $('#dialog-1').show();
+}
+$('#dialog-1').on('touchend click', '.weui_btn_dialog', function() {
+  $('.weui_dialog_alert').hide();
+  if(imgsfz.length > 1){
+    $('.weui_uploader_input_wrp3').hide();
+    for(var s=0;s< imgsfz.length; s++){
+      var $preview = $('<li class="weui_uploader_file img-'+ s +'" style="background-image:url(' + imgsfz[s] + ')">');
+      $('.weui_uploader_files2').append($preview);
+    }
+  }
+});
+//为添加的图片增加点击事件
+$('.weui_uploader_files2').on('click', '.weui_uploader_file', function(e) {
+  var str = e.target.className;
+  var index = str.substr(str.length-1,1);
+  console.log(index);
+  $("#imgsfz-"+index).remove();
+  $('.js_file'+(parseInt(index)+1)).parent().show();
+  imgsfz.splice(index, 1);
+  if($(".weui_uploader_files1").children("li").length < 2){
+    $('.weui_uploader_input_wrp3').show();
+  }
+  $(this).remove();
+})
+//------------------------------------------------------------------------------------//
+function aggg() {
+  $('#dialog-2').show();
+}
+$('#dialog-2').on('touchend click', '.weui_btn_dialog', function() {
+  $('.weui_dialog_alert').hide();
+  if(imggfht.length > 5){
+    $('.weui_uploader_input_wrp4').remove();
+    for(var s=0;s< imggfht.length; s++){
+      var $preview = $('<li class="weui_uploader_file" style="background-image:url(' + imggfht[s] + ')">');
+      $('.weui_uploader_files4').append($preview);
+    }
+  }
+});
+//为添加的图片增加点击事件
+$('.weui_uploader_files4').on('click', '.weui_uploader_file', function() {
+  console.log(222);
+})
+//------------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------------//
+//图片上传
+$(function() {
+  // 允许上传的图片类型  
+  var allowTypes = ['image/jpg', 'image/jpeg', 'image/png', 'image/gif'];
+  // 1024KB，也就是 1MB  
+  var maxSize = 1024 * 1024;
+  // 图片最大宽度  
+  var maxWidth = 300;
+  function kkk(ak,index) {
+    ak.on('change', function(event) {
+        var files = event.target.files;
+        // 如果没有选中文件，直接返回  
+        if (files.length === 0) {
+            return;
+        }
+        for (var i = 0, len = files.length; i < len; i++) {
+          var file = files[i];
+          var reader = new FileReader();
+          // 如果类型不在允许的类型范围内  
+          if (allowTypes.indexOf(file.type) === -1) {
+              $.weui.alert({
+                  text: '该类型不允许上传'
+              });
+              continue;
+          }
+          if (file.size > maxSize) {
+              $.weui.alert({
+                  text: '图片太大，不允许上传'
+              });
+              continue;
+          }
+          reader.onload = function(e) {
+              var img = new Image();
+              img.onload = function() {
+                  // 不要超出最大宽度  
+                  var w = Math.min(maxWidth, img.width);
+                  // 高度按比例计算  
+                  var h = img.height * (w / img.width);
+                  var canvas = document.createElement('canvas');
+                  var ctx = canvas.getContext('2d');
+                  // 设置 canvas 的宽度和高度  
+                  canvas.width = w;
+                  canvas.height = h;
+                  ctx.drawImage(img, 0, 0, w, h);
+                  var base64 = canvas.toDataURL('image/png');
+                  imgsfz.push(base64);
+                  // 插入到预览区  
+                  var $preview = $('<li class="weui_uploader_file weui_uploader_file1" id=imgsfz-'+index+' style="background-image:url(' + base64 + ')">');
+                  $('.weui_uploader_files1').append($preview);
+                  console.log($preview);
+                  // 删除父节点下所有
+                  ak.parent().hide();
+              };
+              img.src = e.target.result;
+          };
+          reader.readAsDataURL(file);
+        }
+    });
+  }
+  //------------------------------------------------------------------------------------//
+  function ggg(ak,index) {
+    ak.on('change', function(event) {
+          var files = event.target.files;
+          // 如果没有选中文件，直接返回  
+          if (files.length === 0) {
+              return;
+          }
+          for (var i = 0, len = files.length; i < len; i++) {
+            var file = files[i];
+            var reader = new FileReader();
+            // 如果类型不在允许的类型范围内  
+            if (allowTypes.indexOf(file.type) === -1) {
+                $.weui.alert({
+                    text: '该类型不允许上传'
+                });
+                continue;
+            }
+            if (file.size > maxSize) {
+                $.weui.alert({
+                    text: '图片太大，不允许上传'
+                });
+                continue;
+            }
+            reader.onload = function(e) {
+                var img = new Image();
+                img.onload = function() {
+                    // 不要超出最大宽度  
+                    var w = Math.min(maxWidth, img.width);
+                    // 高度按比例计算  
+                    var h = img.height * (w / img.width);
+                    var canvas = document.createElement('canvas');
+                    var ctx = canvas.getContext('2d');
+                    // 设置 canvas 的宽度和高度  
+                    canvas.width = w;
+                    canvas.height = h;
+                    ctx.drawImage(img, 0, 0, w, h);
+                    var base64 = canvas.toDataURL('image/png');
+                    imggfht.push(base64);
+                    // 插入到预览区  
+                    var $preview = $('<li class="weui_uploader_file weui_uploader_file1" style="background-image:url(' + base64 + ')">');
+                    $('.weui_uploader_files3').append($preview);
+                    // 删除父节点下所有
+                    ak.parent().remove();
+                };
+                img.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+          }
+      });
+  }
+  //------------------------------------------------------------------------------------//
+  var ak1 =  $('.js_file1');
+  var ak2 =  $('.js_file2');
+  var ak3 =  $('.js_file3');
+  var ak4 =  $('.js_file4');
+  var ak5 =  $('.js_file5');
+  var ak6 =  $('.js_file6');
+  var ak7 =  $('.js_file7');
+  var ak8 =  $('.js_file8');
+  kkk(ak1,0);
+  kkk(ak2,1);
+  ggg(ak3,0);
+  ggg(ak4,1);
+  ggg(ak5,2);
+  ggg(ak6,3);
+  ggg(ak7,4);
+  ggg(ak8,5);
+});
+</script>
+</html>
